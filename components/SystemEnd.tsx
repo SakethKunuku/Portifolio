@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Mail, FileText, ExternalLink, Code2, Terminal as TerminalIcon } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { ReflectionDivider } from "@/components/ReflectionDivider";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -136,66 +137,18 @@ export function SystemEnd() {
         </a>
       </motion.div>
 
-      {/* 6. System Summary Terminal */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.6 }}
-        className="w-full max-w-md mx-auto bg-[#05080f] rounded-lg border border-white/[0.05] overflow-hidden text-left mb-12 shadow-xl"
-      >
-        <div className="bg-[#0a0f1c] px-4 py-2 border-b border-white/[0.05] flex items-center gap-2">
-          <TerminalIcon className="w-3.5 h-3.5 text-muted" />
-          <span className="text-[10px] font-mono text-muted uppercase tracking-wider">saketh-os.exe</span>
-        </div>
-        <div className="p-5 font-mono text-xs md:text-sm text-foreground/70 leading-relaxed">
-          <p><span className="text-accent">saketh@os:~$</span> status</p>
-          <br/>
-          <p>experience: <span className="text-emerald-400">loaded</span></p>
-          <p>projects: <span className="text-emerald-400">loaded</span></p>
-          <p>skills: <span className="text-emerald-400">loaded</span></p>
-          <p>enterprise_experience: <span className="text-emerald-400">active</span></p>
-          <br/>
-          <p>current_state: building</p>
-          <p>next_target: intelligent_systems</p>
-          <br/>
-          <p>availability: online</p>
-          <p className="mt-2 text-accent animate-pulse">_</p>
-        </div>
-      </motion.div>
-
-      {/* Terminal Easter Egg */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.7 }}
-        className="w-full max-w-md mx-auto flex items-start justify-center gap-3 text-left mb-16"
-      >
-        <p className="font-mono text-[10px] text-muted uppercase tracking-widest pt-[2px]">Hint:</p>
-        <p className="font-mono text-[10px] text-muted/50 leading-relaxed">
-          Try asking about Agentic AI,<br/>
-          Enterprise Systems,<br/>
-          or Backend Engineering.
-        </p>
-      </motion.div>
+      
 
       {/* 7. Signature Line */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.8 }}
-        className="text-center pb-8"
-      >
-        <p className="font-mono text-[10px] md:text-xs text-muted uppercase tracking-[0.3em] mb-4">
-          You&apos;ve reached the end of the portfolio.
-        </p>
-        <p className="text-sm md:text-base text-foreground/60 italic leading-relaxed">
-          The next chapter is probably being discussed over a call,<br />
-          a whiteboard, or a Jira ticket.
-        </p>
-      </motion.div>
+      <div className="w-full pb-8">
+        <ReflectionDivider 
+          label="PORTFOLIO END" 
+          lines={[
+            <span key={1}>You've reached the <span className="text-accent">end of the portfolio</span>.</span>,
+            <span key={2}>The next chapter is probably being discussed over a <span className="font-bold text-white">call, a whiteboard, or a Jira ticket</span>.</span>
+          ]} 
+        />
+      </div>
 
     </div>
   );

@@ -7,6 +7,7 @@ import { SolutionPortfolio } from "@/components/SolutionPortfolio";
 import { EngineeringDomains } from "@/components/EngineeringDomains";
 import { DeploymentQueue } from "@/components/DeploymentQueue";
 import { SystemEnd } from "@/components/SystemEnd";
+import { ReflectionDivider } from "@/components/ReflectionDivider";
 import { ExternalLink, GitBranch, Database, Terminal, Bot, Code, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -20,8 +21,10 @@ export default function Home() {
       transition={{ duration: 1 }}
       className="flex flex-col w-full"
     >
-      
-      <Section id="hero" className="h-[calc(100vh-4rem)] pt-2 lg:pt-12 px-0 md:px-0 flex flex-col justify-start max-w-none overflow-hidden">
+      <Section
+  id="hero"
+  className="scroll-mt-22 h-[calc(100vh-4rem)] pt-8 lg:pt-13 px-0 md:px-0 flex flex-col justify-start max-w-none overflow-hidden"
+>
         <HeroDashboard />
       </Section>
 
@@ -290,6 +293,13 @@ export default function Home() {
         <ExperienceTimeline />
       </Section>
 
+      <ReflectionDivider 
+        lines={[
+          <span key={1}>The classroom explained the <span className="text-accent">concepts</span>.</span>,
+          <span key={2}>The projects explained the <span className="font-bold text-white">trade-offs</span>.</span>
+        ]}
+      />
+
       {/* 4. Projects */}
       <Section id="projects" delay={0.1} className="max-w-6xl mx-auto px-6 md:px-8 w-full">
         <div className="mb-14">
@@ -306,6 +316,14 @@ export default function Home() {
         <SolutionPortfolio />
       </Section>
 
+      <ReflectionDivider 
+        lines={[
+          <span key={1}>Some projects taught <span className="text-accent">technologies</span>.</span>,
+          <span key={2}>Others taught <span className="text-accent">patience</span>.</span>,
+          <span key={3}>The best ones <span className="font-bold text-white">taught both</span>.</span>
+        ]}
+      />
+
       {/* 5. Skills */}
       <Section id="skills" delay={0.1} className="max-w-6xl mx-auto px-6 md:px-8 w-full">
         <div className="mb-14">
@@ -318,6 +336,13 @@ export default function Home() {
         
         <EngineeringDomains />
       </Section>
+
+      <ReflectionDivider 
+        lines={[
+          <span key={1}>The tools will <span className="text-accent">change</span>.</span>,
+          <span key={2}>The curiosity behind learning them <span className="font-bold text-white">probably won't</span>.</span>
+        ]}
+      />
 
       {/* 6. Current Exploration */}
       <Section id="exploration" delay={0.1} className="max-w-6xl mx-auto px-6 md:px-8 w-full">
@@ -336,6 +361,13 @@ export default function Home() {
         </div>
         <DeploymentQueue />
       </Section>
+
+      <ReflectionDivider 
+        lines={[
+          <span key={1}>Every project started with a <span className="text-accent">conversation</span>.</span>,
+          <span key={2}>The next one <span className="font-bold text-white">probably will too</span>.</span>
+        ]}
+      />
 
       {/* 7. System End */}
       <Section id="contact" className="min-h-[90vh] justify-center items-center px-4 md:px-12 w-full pt-20" delay={0.1}>

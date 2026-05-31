@@ -19,7 +19,7 @@ export function Section({ id, className, children, delay = 0 }: SectionProps) {
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay }}
-      className={cn("min-h-screen scroll-mt-24 py-24 px-6 md:px-12 flex flex-col", className)}
+      className={cn("min-h-screen py-24 px-6 md:px-12 flex flex-col", className)}
     >
       {children}
     </motion.section>
