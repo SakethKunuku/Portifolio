@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 import React from "react";
 
 export function ReflectionDivider({ lines, label = "System Insight" }: { lines: React.ReactNode[], label?: string }) {
@@ -9,7 +9,7 @@ export function ReflectionDivider({ lines, label = "System Insight" }: { lines: 
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
+      transition: { duration: 0.8, ease: easeOut } 
     }
   };
 
